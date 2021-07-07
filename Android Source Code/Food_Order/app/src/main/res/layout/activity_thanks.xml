@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".ui.thanks.ThanksActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBG"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/space_20"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_logo" />
+
+        <customViews.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:text="@string/thanks_for_your_order"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="22sp" />
+
+        <customViews.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_order_place_successfully"
+            android:textColor="@color/colorTextHint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/xml_view_white2"
+            android:orientation="vertical"
+            android:padding="@dimen/space_15">
+
+            <customViews.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/booking_details"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextHint"
+                android:textSize="@dimen/text_18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/order_id"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_16" />
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_thanks_order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="@dimen/text_16"
+                    android:autoSizeMinTextSize="@dimen/text_10"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="start|center"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/date"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_16" />
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_thanks_order_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="@dimen/text_16"
+                    android:autoSizeMinTextSize="@dimen/text_10"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="start|center"
+                    android:maxLines="1"
+                    android:text="202002021165465465465431321314654"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_16" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/xml_view_white2"
+            android:orientation="vertical"
+            android:padding="@dimen/space_15">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_total_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorTextHint" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/sub_total"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_total_price_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorTextHint" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/discount"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorGreenLight" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_order_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorGreenLight" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_thanks_delivery_charge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_delivery_charge_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/delivery_charge"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_delivery_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_thanks_gateway_charge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/gateway_charges"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_gateway_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_thanks_total_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/total_paid"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_thanks_total_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <customViews.ButtonBold
+                android:id="@+id/btn_thanks_track_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_5"
+                android:layout_weight="1"
+                android:background="@drawable/xml_button_red"
+                android:gravity="center"
+                android:text="@string/track_order"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18" />
+
+            <customViews.ButtonBold
+                android:id="@+id/btn_thanks_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:layout_weight="1"
+                android:background="@drawable/xml_button_red"
+                android:gravity="center"
+                android:text="@string/continue1"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

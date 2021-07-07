@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.contact_us.ContactUsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBG"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <customViews.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/how_many_i_help_you"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="@dimen/text_18" />
+
+        <customViews.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/feel_free_to_contact_us_if_need_any_help_of_support"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorTextHint"
+            android:textSize="@dimen/text_12" />
+
+        <EditText
+            android:id="@+id/et_contact_us_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_view_white"
+            android:ems="10"
+            android:gravity="start|center"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorTextHint" />
+
+        <customViews.EditTextRegular
+            android:id="@+id/et_contact_us_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/xml_view_white"
+            android:ems="10"
+            android:gravity="start|center"
+            android:hint="@string/phone_number"
+            android:inputType="number"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorTextHint" />
+
+        <customViews.EditTextRegular
+            android:id="@+id/et_contact_us_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/xml_view_white"
+            android:ems="10"
+            android:gravity="start|center"
+            android:hint="@string/write_your_message_here"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorTextHint" />
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_contact_us_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/send"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+        <customViews.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_5"
+            android:text="@string/quick_contact"
+            android:textColor="@color/colorText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_view_white2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_20">
+
+            <ImageView
+                android:id="@+id/iv_contact_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_call"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_contact_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_15"
+                android:src="@mipmap/ic_email"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_contact_whatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_15"
+                android:src="@mipmap/ic_whatsapp"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.checkout.CheckoutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <customViews.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_20"
+            android:text="@string/how_would_you_like_to_pay"
+            android:textSize="@dimen/text_18" />
+
+        <LinearLayout
+            android:id="@+id/ll_checkout_cod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_10"
+            android:background="@drawable/xml_payment_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cash_on_delivery"
+                android:src="@drawable/ic_cod" />
+
+            <customViews.TextViewRegular
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_20"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/cash_on_delivery"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_18" />
+
+            <ImageView
+                android:id="@+id/iv_checkout_cod"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/cash_on_delivery"
+                android:src="@mipmap/ic_circle_check" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_checkout_cash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_payment_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/pay_now"
+                android:src="@drawable/ic_pay_now" />
+
+            <customViews.TextViewRegular
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_20"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/pay_now"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_18" />
+
+            <ImageView
+                android:id="@+id/iv_checkout_cash"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/cash_on_delivery"
+                android:src="@mipmap/ic_circle_check" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_30"
+            android:background="@drawable/xml_view_white2"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/space_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/sub_total"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_checkout_price_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_checkout_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/delivery_charge"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_checkout_delivery_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/discount_prcode"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_checkout_discount_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/total_items"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/amount_to_pay"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_18" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_checkout_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20.00"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/text_18" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_checkout_order_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/order_now"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+</ScrollView>

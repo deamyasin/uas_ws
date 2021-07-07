@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.login.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_view_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:contentDescription="@string/phone_number"
+                android:src="@drawable/ic_user" />
+
+            <customViews.EditTextRegular
+                android:id="@+id/et_login_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="start|bottom"
+                android:hint="@string/phone_number"
+                android:inputType="number"
+                android:maxLength="15"
+                android:padding="@dimen/space_10"
+                android:textAlignment="viewStart" />
+
+        </LinearLayout>
+
+        <customViews.EditTextRegular
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/xml_view_white"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="@dimen/space_10"
+            android:ems="10"
+            android:gravity="start|bottom"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+        <customViews.TextViewBold
+            android:id="@+id/tv_login_forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_15"
+            android:text="@string/forgot_password"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_16" />
+
+        <customViews.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:gravity="center"
+            android:text="@string/to_enjoy_delicious_food_please_join_us"
+            android:textColor="@color/colorBlack" />
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_login_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_border_green"
+            android:gravity="center"
+            android:text="@string/new_register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+</ScrollView>

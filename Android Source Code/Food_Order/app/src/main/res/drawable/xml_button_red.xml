@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/xml_gradient_green" android:state_enabled="true" />
+    <item>
+        <shape>
+            <solid android:color="@color/colorGreenLight" />
+            <corners android:radius="@dimen/space_10" />
+        </shape>
+    </item>
+</selector>

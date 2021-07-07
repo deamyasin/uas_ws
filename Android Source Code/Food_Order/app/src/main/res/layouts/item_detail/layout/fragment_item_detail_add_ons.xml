@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBG"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_item_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/space_20"
+        app:layout_constraintBottom_toTopOf="@id/ll_item_detail_add_ons_continue_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_marginEnd="@dimen/space_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <customViews.TextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/item_qty"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorGreenDark"
+                    android:textSize="@dimen/text_18" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_marginEnd="@dimen/space_5"
+                    android:background="@drawable/xml_gradient_green_rounded"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_item_detail_add_ons_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_minus_white"
+                        tools:ignore="ContentDescription" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10">
+
+                        <ProgressBar
+                            android:id="@+id/pb_item_detail_add_ons_qty"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="@color/colorWhite"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <customViews.TextViewBold
+                            android:id="@+id/tv_item_detail_add_ons_qty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minWidth="30dp"
+                            android:minHeight="30dp"
+                            android:text="0"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_18"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_item_detail_add_ons_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_plus_white"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_item_detail_add_ons_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_10"
+                android:layout_marginEnd="@dimen/space_20"
+                android:text="@string/add_ons"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_16" />
+
+            <ProgressBar
+                android:id="@+id/pb_item_detail_add_ons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/space_30" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_item_detail_add_ons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_item_detail_add_ons_continue_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_20"
+        android:background="@drawable/xml_border_gray_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_20"
+        android:paddingTop="@dimen/space_10"
+        android:paddingEnd="@dimen/space_20"
+        android:paddingBottom="@dimen/space_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/continue_with_cart"
+            android:src="@drawable/ic_cart" />
+
+        <customViews.TextViewRegular
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_10"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="@dimen/text_16"
+            android:autoSizeMinTextSize="@dimen/text_12"
+            android:autoSizeTextType="uniform"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@string/continue_with_cart"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/text_16" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_10"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_item_detail_add_ons_price_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ USD 35"
+                android:textColor="@color/colorRed"
+                android:textSize="12sp" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_item_detail_add_ons_price_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD 30"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

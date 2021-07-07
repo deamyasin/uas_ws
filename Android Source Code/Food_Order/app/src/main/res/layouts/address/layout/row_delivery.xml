@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/space_20"
+    android:layout_marginTop="@dimen/space_5"
+    android:layout_marginEnd="@dimen/space_20"
+    android:layout_marginBottom="@dimen/space_5"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/space_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_10"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_delivery_address_select"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_delivery_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nr. JK Chowk"
+                android:textColor="@color/colorBlack" />
+
+            <customViews.TextViewRegular
+                android:id="@+id/tv_delivery_address_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="University road"
+                android:textSize="@dimen/text_12" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@color/colorDivider" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_delivery_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <ImageView
+                        android:id="@+id/iv_delivery_address_edit"
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:contentDescription="@string/edit"
+                        android:src="@drawable/ic_edit" />
+
+                    <customViews.TextViewRegular
+                        android:id="@+id/tv_delivery_address_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:text="@string/edit"
+                        android:textSize="@dimen/text_12" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_delivery_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_40"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <ImageView
+                        android:id="@+id/iv_delivery_address_delete"
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:contentDescription="@string/delete"
+                        android:src="@drawable/ic_delete" />
+
+                    <customViews.TextViewRegular
+                        android:id="@+id/tv_delivery_address_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:text="@string/delete"
+                        android:textSize="@dimen/text_10" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <customViews.TextViewRegular
+            android:id="@+id/tv_delivery_address_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_view_gray"
+            android:paddingStart="@dimen/space_10"
+            android:paddingTop="@dimen/space_2"
+            android:paddingEnd="@dimen/space_10"
+            android:paddingBottom="@dimen/space_2"
+            android:text="@string/select"
+            android:textSize="@dimen/text_12"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

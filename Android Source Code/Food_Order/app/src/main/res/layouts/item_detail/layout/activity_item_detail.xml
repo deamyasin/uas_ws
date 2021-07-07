@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.item_detail.ItemDetailActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/ll_item_detail_add_ons_continue_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/pb_item_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:toolbarId="@+id/toolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_item_detail_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_launcher"
+                        android:transitionName="productIMG"
+                        tools:ignore="ContentDescription" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/xml_shadow_vertical_black" />
+
+                    <customViews.TextViewRegular
+                        android:id="@+id/tv_item_detail_offer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="?actionBarSize"
+                        android:background="@color/colorRed"
+                        android:paddingStart="@dimen/space_10"
+                        android:paddingEnd="@dimen/space_10"
+                        android:text="5% Off"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_item_detail_promotional"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:src="@drawable/ic_promotional_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_15"
+                            android:layout_marginBottom="@dimen/space_15"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_logo" />
+
+                        <customViews.TextViewBold
+                            android:id="@+id/tv_actionbar_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_15"
+                            android:autoSizeMaxTextSize="20sp"
+                            android:autoSizeMinTextSize="@dimen/text_12"
+                            android:autoSizeTextType="uniform"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/app_name"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include layout="@layout/content_item_detail" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/xml_vertical_shadow"
+        app:layout_constraintBottom_toTopOf="@id/ll_item_detail_add_ons_continue_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_detail_add_ons_continue_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_20"
+        android:paddingStart="@dimen/space_20"
+        android:paddingTop="@dimen/space_10"
+        android:paddingEnd="@dimen/space_20"
+        android:paddingBottom="@dimen/space_10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/continue_with_cart"
+            android:src="@drawable/ic_cart" />
+
+        <customViews.TextViewRegular
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_10"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="@dimen/text_16"
+            android:autoSizeMinTextSize="@dimen/text_12"
+            android:autoSizeTextType="uniform"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@string/continue_with_cart"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/text_16" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_10"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_item_detail_add_ons_price_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ USD 35"
+                android:textColor="@color/colorRed"
+                android:textSize="12sp" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_item_detail_add_ons_price_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD 30"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

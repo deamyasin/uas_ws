@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginBottom="@dimen/space_10"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/space_8"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/space_10"
+            android:paddingTop="@dimen/space_15"
+            android:paddingEnd="@dimen/space_5"
+            android:paddingBottom="@dimen/space_15">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_menu_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_menu_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_marginEnd="@dimen/space_10"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="@string/app_name"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_18" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_menu_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xml_gradient_green_vertical_rounded"
+                android:gravity="center"
+                android:paddingStart="@dimen/space_15"
+                android:paddingTop="@dimen/space_2"
+                android:paddingEnd="@dimen/space_15"
+                android:paddingBottom="@dimen/space_2"
+                android:text="10"
+                android:textColor="@color/colorWhite" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:src="@drawable/ic_arrow_right"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

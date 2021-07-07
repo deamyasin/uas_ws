@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_50"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_30"
+            android:background="@drawable/xml_rounded_border_gray"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:id="@+id/tv_profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_rounded_border_gray"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:id="@+id/tv_profile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_rounded_border_gray"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:id="@+id/tv_profile_vehicle_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_rounded_border_gray"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:id="@+id/tv_profile_licence_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/xml_rounded_border_gray"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/space_10"
+            android:textAlignment="viewStart" />
+
+        <Button
+            android:id="@+id/btn_profile_change_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_view_rounded_green"
+            android:text="@string/change_password"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+</ScrollView>

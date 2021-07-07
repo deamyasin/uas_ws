@@ -1,0 +1,121 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.8'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.crashlytics'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.fooddeliveryboy"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                onesignal_app_id               : 'db7417bd-c40f-42c7-b060-e10ab3be9b96',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+
+        buildConfigField "String", "BASE_URL", keystoreProperties['BASE_URL_LIVE']
+        buildConfigField "String", "IMG_BASE_URL", keystoreProperties['IMG_BASE_URL_LIVE']
+        buildConfigField "String", "ITEM_PURCHASE_CODE", keystoreProperties['ITEM_PURCHASE_CODE']
+        buildConfigField "String", "HEADER_DEVICE", keystoreProperties['HEADER_DEVICE']
+        buildConfigField "String", "HEADER_VERSION", keystoreProperties['HEADER_VERSION']
+        buildConfigField "String", "ENCRYPTED_PASSWORD", keystoreProperties['ENCRYPTED_PASSWORD']
+        buildConfigField "String", "DIRECTION_KEY", keystoreProperties['DIRECTION_KEY']
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.karumi:dexter:6.0.2'
+    implementation 'com.github.rajeshbdabhi:SecureSharedPreferences:1.0.1'
+    implementation 'com.job:droidnet:2.0.0'
+    implementation('com.github.thekhaeng:pushdown-anim-click:1.1.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+    implementation 'com.onesignal:OneSignal:3.15.1'
+
+    //firebase
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.4'
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta03'
+
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    //lifecycle extensions
+    implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+apply plugin: 'com.google.gms.google-services'

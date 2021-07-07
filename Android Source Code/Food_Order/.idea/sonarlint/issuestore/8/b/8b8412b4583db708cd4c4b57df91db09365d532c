@@ -1,0 +1,9 @@
+
+t
+java:S3776E"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(øˆ÷Ãùÿÿÿÿ8È¹®üÀ.
+`
+java:S1128">Remove this unused import 'android.content.pm.PackageManager'.(€®¥õÿÿÿÿÿ8óºÿÀ.
+Z
+java:S1128"=Remove this unused import 'androidx.core.app.ActivityCompat'.(ş¤—²8óºÿÀ.
+O
+java:S1128"-Remove this unused import 'android.Manifest'.(¦øïúÿÿÿÿ8óºÿÀ.

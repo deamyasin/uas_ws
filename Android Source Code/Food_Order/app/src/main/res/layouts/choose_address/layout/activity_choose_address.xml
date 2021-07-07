@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.choose_address.ChooseAddressActivity">
+
+    <fragment
+        android:id="@+id/map_choose_address"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_marker"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ll_choose_address_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_5"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/space_8">
+
+                <LinearLayout
+                    android:id="@+id/ll_choose_address_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:layout_marginEnd="@dimen/space_10"
+                    android:layout_marginBottom="65dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"
+                        tools:ignore="ContentDescription" />
+
+                    <customViews.TextViewRegular
+                        android:id="@+id/tv_choose_address_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/text_12" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_choose_address_delivery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/space_15"
+            android:layout_marginEnd="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_15"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <ProgressBar
+                android:id="@+id/pb_choose_address"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorWhite" />
+
+            <customViews.TextViewBold
+                android:id="@+id/btn_choose_address_deliver_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/deliver_here"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_14" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

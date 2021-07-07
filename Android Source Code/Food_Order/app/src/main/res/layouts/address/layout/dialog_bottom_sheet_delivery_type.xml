@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_delivery_type"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/space_30"
+    android:paddingTop="@dimen/space_30"
+    android:paddingEnd="@dimen/space_30"
+    android:paddingBottom="@dimen/space_30">
+
+    <customViews.TextViewBold
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/how_would_you_like_to_get_your_order"
+        android:textColor="@color/colorBlack" />
+
+    <customViews.ButtonBold
+        android:id="@+id/btn_delivery_type_pickup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_10"
+        android:background="@drawable/xml_button_red"
+        android:drawableStart="@drawable/ic_type_pickup"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/space_10"
+        android:text="@string/pickup_parcel"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_18" />
+
+    <customViews.ButtonBold
+        android:id="@+id/btn_delivery_type_delivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_10"
+        android:background="@drawable/xml_button_red"
+        android:drawableStart="@drawable/ic_type_delivery"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/space_10"
+        android:text="@string/delivery"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_18" />
+
+</LinearLayout>

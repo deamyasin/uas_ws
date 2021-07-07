@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Food Delivery Boy</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">الإعدادات</string>
+
+    <string name="error_field_required">هذه الخانة مطلوبه</string>
+    <string name="error_password_short">يجب ألا تقل كلمة المرور عن 6 أحرف</string>
+    <string name="error_phone_short">رقم الهاتف قصير جدًا</string>
+
+    <string name="menu_home">الصفحة الرئيسية</string>
+    <string name="menu_gallery">صالة عرض</string>
+    <string name="menu_slideshow">عرض الشرائح</string>
+
+    <string name="home_second">الصفحة الرئيسية الثانية</string>
+    <string name="title_activity_maps">خريطة</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="recent_orders">الطلبيات الأخيرة</string>
+    <string name="completed_orders">الطلبات المكتملة</string>
+    <string name="on_duty">في الخدمة</string>
+    <string name="location">موقعك</string>
+    <string name="order_picked">ترتيب منتقى</string>
+    <string name="order_id">رقم التعريف الخاص بالطلب:</string>
+    <string name="total_items">إجمالي العناصر:</string>
+    <string name="delivery_on">التسليم في:</string>
+    <string name="assigned_orders">الأوامر المعينة:</string>
+    <string name="delivered">تم التوصيل</string>
+    <string name="order_items">طلب بضاعة</string>
+    <string name="product">المنتج</string>
+    <string name="qty">الكمية</string>
+    <string name="total_qty">إجمالي الكمية:</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمه السر</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="to">إلى</string>
+    <string name="tracking_on">تتبع</string>
+    <string name="this_notification_disappear_after_all_item_delivered">يختفي هذا الإخطار بعد تسليم كل العناصر.</string>
+    <string name="change_password">غير كلمة السر</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة سر جديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="submit">إرسال</string>
+    <string name="confirm_password_does_t_match_with_new_password">تأكيد كلمة المرور لا يتطابق مع كلمة المرور الجديدة</string>
+    <string name="password_changed_successfully">تم تغيير الرقم السري بنجاح</string>
+    <string name="order_details">تفاصيل الطلب</string>
+    <string name="call">مكالمة</string>
+    <string name="order_location">موقع الطلب</string>
+    <string name="your_location">موقعك</string>
+    <string name="delivery_boy_login">فتى توصيل الطعام تسجيل الدخول</string>
+    <string name="note_login_details_only_provided_by_administrator">ملاحظة: تفاصيل تسجيل الدخول مقدمة فقط من قبل المسؤول.</string>
+    <string name="total_price">السعر الكلي:</string>
+    <string name="items">العناصر:</string>
+    <string name="amount">كمية:</string>
+    <string name="map_location">خريطة الموقع</string>
+    <string name="call_customer">اتصل بالعميل</string>
+    <string name="out_for_delivery">خارج للتوصيل</string>
+    <string name="new_orders">طلبات جديدة:</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="price">السعر</string>
+    <string name="payment">دفع:</string>
+    <string name="discount">خصم:</string>
+    <string name="delivery_charge">رسوم التوصيل:</string>
+    <string name="arabic">عربى</string>
+    <string name="english">English</string>
+
+</resources>

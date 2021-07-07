@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/space_10"
+    android:layout_marginTop="@dimen/space_10"
+    android:layout_marginEnd="@dimen/space_10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xml_view_white2"
+        android:orientation="vertical"
+        android:padding="@dimen/space_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <customViews.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_id"
+                android:textColor="@color/colorTextHint" />
+
+            <customViews.TextViewRegular
+                android:id="@+id/tv_track_order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:text="004"
+                android:textColor="@color/colorTextHint" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <customViews.TextViewRegular
+                android:id="@+id/tv_track_order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:text="@string/order_placed"
+                android:textColor="@color/colorCyan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <customViews.TextViewRegular
+                android:id="@+id/tv_track_order_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="03-05-2020 12:30 PM"
+                android:textColor="@color/colorTextHint" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_track_order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:text="@string/currency"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cv_track_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:background="@drawable/xml_view_white2"
+        android:orientation="vertical"
+        android:padding="@dimen/space_10"
+        android:transitionName="track_order">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_track_order_placed"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/xml_track_selector"
+                android:padding="@dimen/space_15"
+                android:src="@drawable/ic_order_placed"
+                android:tint="@color/xml_black_white"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:orientation="vertical">
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_track_order_placed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_placed"
+                    android:textColor="@color/xml_gray_black"
+                    android:textSize="@dimen/text_18" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_track_order_placed_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xml_bg_selector"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="80dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/text_12" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view_track_order_preparing"
+                android:layout_width="@dimen/space_5"
+                android:layout_height="@dimen/space_10"
+                android:background="@drawable/xml_track_selector3"
+                app:layout_constraintEnd_toEndOf="@id/iv_track_order_preparing"
+                app:layout_constraintStart_toStartOf="@id/iv_track_order_preparing"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_track_order_preparing"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/xml_track_selector"
+                android:padding="@dimen/space_15"
+                android:src="@drawable/ic_preparing"
+                android:tint="@color/xml_black_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_track_order_preparing"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/iv_track_order_preparing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_track_order_preparing"
+                app:layout_constraintTop_toTopOf="@id/iv_track_order_preparing">
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_track_order_preparing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preparing"
+                    android:textColor="@color/xml_gray_black"
+                    android:textSize="@dimen/text_18" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_track_order_preparing_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xml_bg_selector"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="80dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/text_12" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view_track_order_delivery"
+                android:layout_width="@dimen/space_5"
+                android:layout_height="@dimen/space_10"
+                android:background="@drawable/xml_track_selector3"
+                app:layout_constraintEnd_toEndOf="@id/iv_track_order_delivery"
+                app:layout_constraintStart_toStartOf="@id/iv_track_order_delivery"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_track_order_delivery"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/xml_track_selector"
+                android:padding="@dimen/space_15"
+                android:src="@drawable/ic_out_for_delivery"
+                android:tint="@color/xml_black_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_track_order_delivery"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/iv_track_order_delivery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_track_order_delivery"
+                app:layout_constraintTop_toTopOf="@id/iv_track_order_delivery">
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_track_order_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/out_for_delivery"
+                    android:textColor="@color/xml_gray_black"
+                    android:textSize="@dimen/text_18" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_track_order_delivery_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xml_bg_selector"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="80dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/text_12" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view_track_order_delivered"
+                android:layout_width="@dimen/space_5"
+                android:layout_height="@dimen/space_10"
+                android:background="@drawable/xml_track_selector3"
+                app:layout_constraintEnd_toEndOf="@id/iv_track_order_delivered"
+                app:layout_constraintStart_toStartOf="@id/iv_track_order_delivered"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_track_order_delivered"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/xml_track_selector"
+                android:padding="@dimen/space_15"
+                android:src="@drawable/ic_delivered"
+                android:tint="@color/xml_black_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_track_order_delivered"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/iv_track_order_delivered"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_track_order_delivered"
+                app:layout_constraintTop_toTopOf="@id/iv_track_order_delivered">
+
+                <customViews.TextViewBold
+                    android:id="@+id/tv_track_order_delivered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivered"
+                    android:textColor="@color/xml_gray_black"
+                    android:textSize="@dimen/text_18" />
+
+                <customViews.TextViewRegular
+                    android:id="@+id/tv_track_order_delivered_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xml_bg_selector"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="80dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/text_12" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

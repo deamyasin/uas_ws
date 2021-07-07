@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBG"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".ui.cart.CartFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_cart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="130dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_cart_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_marginEnd="@dimen/space_10"
+        android:background="@drawable/xml_view_white2"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_20"
+            android:layout_marginEnd="@dimen/space_20"
+            android:background="@drawable/xml_view_white2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <customViews.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/total_amount"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_18" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_cart_total_price_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:text="@string/currency"
+                android:textColor="@color/colorGreenDark"
+                android:textSize="@dimen/text_18" />
+
+            <customViews.TextViewBold
+                android:id="@+id/tv_cart_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:text="20.00"
+                android:textColor="@color/colorGreenDark"
+                android:textSize="@dimen/text_18" />
+
+        </LinearLayout>
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_cart_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_20"
+            android:layout_marginEnd="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_20"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/checkout"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cart_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/empty_tray"
+            android:src="@drawable/ic_cart_empty" />
+
+        <customViews.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="@string/empty_tray"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_20" />
+
+        <customViews.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_met_to_add_some_food"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_16" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.otp.OtpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <customViews.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_otp_sent_on_your_mobile"
+            android:textSize="@dimen/text_18" />
+
+        <customViews.TextViewBold
+            android:id="@+id/tv_otp_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 9909038886"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="@dimen/text_18" />
+
+        <com.mukesh.OtpView
+            android:id="@+id/otpview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0000"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textSize="@dimen/text_18"
+            app:itemCount="6"
+            app:lineColor="@color/colorGreenLight"
+            app:lineWidth="3dp"
+            app:viewType="line" />
+
+        <customViews.TextViewRegular
+            android:id="@+id/tv_otp_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:text="@string/resend_in"
+            android:textColor="@color/colorTextHint"
+            android:textSize="@dimen/text_16" />
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_otp_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/verify"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+        <customViews.ButtonBold
+            android:id="@+id/btn_otp_resend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/xml_button_red"
+            android:gravity="center"
+            android:text="@string/resend"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18" />
+
+    </LinearLayout>
+
+</ScrollView>

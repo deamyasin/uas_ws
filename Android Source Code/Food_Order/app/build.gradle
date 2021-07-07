@@ -1,0 +1,181 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.8'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.crashlytics'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.foodorder"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                onesignal_app_id               : 'db7417bd-c40f-42c7-b060-e10ab3be9b96',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+
+        buildConfigField "String", "BASE_URL", keystoreProperties['BASE_URL_LIVE']
+        buildConfigField "String", "IMG_BASE_URL", keystoreProperties['IMG_BASE_URL_LIVE']
+        buildConfigField "String", "ITEM_PURCHASE_CODE", keystoreProperties['ITEM_PURCHASE_CODE']
+        buildConfigField "String", "HEADER_DEVICE", keystoreProperties['HEADER_DEVICE']
+        buildConfigField "String", "HEADER_VERSION", keystoreProperties['HEADER_VERSION']
+        buildConfigField "String", "ENCRYPTED_PASSWORD", keystoreProperties['ENCRYPTED_PASSWORD']
+        buildConfigField "String", "DIRECTION_KEY", keystoreProperties['DIRECTION_KEY']
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+
+        // Configures multiple APKs based on screen density.
+        density {
+
+            // Configures multiple APKs based on screen density.
+            enable true
+
+            // Specifies a list of screen densities Gradle should not create multiple APKs for.
+            exclude "ldpi", "xxhdpi", "xxxhdpi"
+
+            // Specifies a list of compatible screen size settings for the manifest.
+            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+        }
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86 and x86_64.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "x86_64"
+
+            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+            universalApk true
+        }
+    }
+// To inline the bytecode built with JVM target 1.8 into
+// bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src/main/res',
+                        'src/main/res/layouts/home',
+                        'src/main/res/layouts/login',
+                        'src/main/res/layouts/register',
+                        'src/main/res/layouts/otp',
+                        'src/main/res/layouts/checkout',
+                        'src/main/res/layouts/menu',
+                        'src/main/res/layouts/cart',
+                        'src/main/res/layouts/track_order',
+                        'src/main/res/layouts/menu_item',
+                        'src/main/res/layouts/item_detail',
+                        'src/main/res/layouts/my_order',
+                        'src/main/res/layouts/order_detail',
+                        'src/main/res/layouts/address',
+                        'src/main/res/layouts/choose_address',
+                        'src/main/res/layouts/forgot_password',
+                        'src/main/res/layouts/profile'
+            }
+        }
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.karumi:dexter:6.2.0'
+    implementation 'com.github.rajeshbdabhi:SecureSharedPreferences:1.0.1'
+    implementation('com.github.thekhaeng:pushdown-anim-click:1.1.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.job:droidnet:2.0.0'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.rajeshbdabhi:Image_Compressor:1.0.1'
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+    implementation 'com.onesignal:OneSignal:3.15.1'
+
+    //firebase or google
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+    implementation 'com.google.firebase:firebase-messaging:20.2.3'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:1.2.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.google.firebase:firebase-database:19.3.1'
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    //lifecycle extensions
+    implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+apply plugin: 'com.google.gms.google-services'
