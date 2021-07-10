@@ -1,7 +1,7 @@
  
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
  <a href="<?php echo site_url(); ?>" class="brand-link">
-   <img src="<?php echo base_url(ADMIN_THEME_BASE."/img/logo.jpg") ?>" alt="Logo" class="brand-image img-circle elevation-3"
+   <img src="<?php echo base_url(ADMIN_THEME_BASE."/img/logo.jpg ") ?>" alt="Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
           <span class="brand-text font-weight-light"><?php echo APP_NAME; ?></span>
  </a>
@@ -63,11 +63,14 @@
              $menu_array[] = array("menu_title"=>_l("Products"),"link"=>"javascript:;","menu_icon"=>"nav-icon fas fa-industry","badge"=>"","sub_menu"=>$product_menu);                
                 
              $menu_array[] = array("menu_title"=>_l("Discounts"),"link"=>site_url("admin/discounts"),"menu_icon"=>"nav-icon fas fa-tag","badge"=>"");
+             
+             /*
              $menu_array[] = array("menu_title"=>_l("Coupons"),"link"=>site_url("admin/coupons"),"menu_icon"=>"nav-icon fas fa-tags","badge"=>"");
              $menu_array[] = array("menu_title"=>_l("Banners"),"link"=>site_url("admin/banners"),"menu_icon"=>"nav-icon fas fa-image","badge"=>"");              
              $menu_array[] = array("menu_title"=>_l("Support Inbox"),"link"=>site_url("admin/contacts"),"menu_icon"=>"nav-icon fas fa-envelope","badge"=>"");              
              $menu_array[] = array("menu_title"=>_l("Notifications"),"link"=>site_url("admin/notifications"),"menu_icon"=>"nav-icon fas fa-bell","badge"=>"");              
-                          
+             */             
+             
              $menu_array[] = array("menu_title"=>_l("App Users"),"link"=>site_url("admin/users/appusers"),"menu_icon"=>"nav-icon fas fa-users","badge"=>$count_user_customer);            
              $menu_array[] = array("menu_title"=>_l("Branches"),"link"=>site_url("admin/branches"),"menu_icon"=>"nav-icon fas fa-truck","badge"=>$count_branches);                             
              $menu_array[] = array("menu_title"=>_l("Delivery Boy"),"link"=>site_url("admin/deliveryboy"),"menu_icon"=>"nav-icon fas fa-truck","badge"=>"");                             
@@ -81,15 +84,18 @@
 
              $settings_menu[] = array("menu_title"=>_l("General Settings"),"link"=>site_url("setting"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
              $settings_menu[] = array("menu_title"=>_l("App Settings"),"link"=>site_url("setting/app"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
+             /*
              $settings_menu[] = array("menu_title"=>_l("Billing Settings"),"link"=>site_url("setting/billing"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
              $settings_menu[] = array("menu_title"=>_l("SMS Settings"),"link"=>site_url("setting/sms_setting"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
              $settings_menu[] = array("menu_title"=>_l("Payment Settings"),"link"=>site_url("setting/payment"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
+             */
              $settings_menu[] = array("menu_title"=>_l("Email Settings"),"link"=>site_url("setting/email"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
              $settings_menu[] = array("menu_title"=>_l("Email Templates"),"link"=>site_url("admin/emailtemplates"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
              $settings_menu[] = array("menu_title"=>_l("App Pages"),"link"=>site_url("admin/apppages"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
+             /*
              $settings_menu[] = array("menu_title"=>_l("Keys"),"link"=>site_url("setting/keys"),"menu_icon"=>"nav-icon fas fa-cog","badge"=>"");
+             */
              $menu_array[] = array("menu_title"=>_l("Settings"),"link"=>"javascript:;","menu_icon"=>"nav-icon fas fa-cog","badge"=>"","sub_menu"=>$settings_menu); 
-            
             $active_menu = array();
             if(isset($active_menu_link)){
                 $active_menu = $active_menu_link;
